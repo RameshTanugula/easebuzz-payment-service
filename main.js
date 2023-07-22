@@ -16,11 +16,17 @@ var express = require("express");
 var app = express();
 var path = require("path");
 var bodyParser = require('body-parser');
+const cors = require("cors");
 app.use(bodyParser());
 app.use('/static', express.static(path.join(__dirname, 'assets')))
 app.use('/view', express.static(path.join(__dirname, 'views')))
 app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
+app.use(express.json());
+var corsOptions = {
+  origin: "*"
+};
+app.use(cors(corsOptions));
 /* 
   Change key,salt and other configuration mentioned in .env file
 */
