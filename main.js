@@ -25,11 +25,18 @@ app.set('view engine', 'ejs')
   Change key,salt and other configuration mentioned in .env file
 */
 
+// var config = {
+//   key: process.env.EASEBUZZ_KEY,
+//   salt: process.env.EASEBUZZ_SALT,
+//   env: process.env.EASEBUZZ_ENV,
+//   enable_iframe: process.env.EASEBUZZ_IFRAME,
+// };
+
 var config = {
-  key: process.env.EASEBUZZ_KEY,
-  salt: process.env.EASEBUZZ_SALT,
-  env: process.env.EASEBUZZ_ENV,
-  enable_iframe: process.env.EASEBUZZ_IFRAME,
+  key: "EVAHWB8DBU",
+  salt: "5407T4MCWI",
+  env: "prod",
+  enable_iframe: 0,
 };
 
 app.get('/', function (req, res) {
